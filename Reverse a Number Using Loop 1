@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+     
+        String input = sc.nextLine();
+        
+        
+        try {
+            long n = Long.parseLong(input);
+            
+            if (n <= 0 || n > 1000000000) {
+                System.out.println("Invalid Input");
+            } else {
+                long reversed = 0;
+                while (n > 0) {
+                    int digit = (int)(n % 10);
+                    reversed = reversed * 10 + digit;
+                    n /= 10;
+                }
+                System.out.println(reversed);
+            }
+        } catch (NumberFormatException e) {
+           
+            System.out.println("Invalid Input");
+        }
+        
+        sc.close();
+    }
+}
