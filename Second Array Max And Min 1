@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int length = scanner.nextInt();
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        ArrayList<Integer> evenPos = new ArrayList<>();
+        ArrayList<Integer> oddPos = new ArrayList<>();
+
+        for (int i = 0; i < length; i++) {
+            if (i % 2 == 0) {
+                evenPos.add(arr[i]);
+            } else {
+                oddPos.add(arr[i]);
+            }
+        }
+
+        Collections.sort(evenPos);
+        Collections.sort(oddPos);
+
+        int secondLargestEven = evenPos.get(evenPos.size() - 2);
+        int secondSmallestOdd = oddPos.get(1);
+
+        System.out.println("Sum=" + (secondLargestEven + secondSmallestOdd));
+    }
+}
+        
