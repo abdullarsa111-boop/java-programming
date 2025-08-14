@@ -1,0 +1,37 @@
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        
+        int numberOfBuildings = scanner.nextInt();
+        int[] doors = new int[numberOfBuildings];
+        
+        for (int i = 0; i < numberOfBuildings; i++) {
+            doors[i] = scanner.nextInt();
+        }
+        
+        int address = scanner.nextInt();
+        boolean found = false;
+        
+        for (int i = 0; i < numberOfBuildings; i++) {
+            if (doors[i] == address) {
+                System.out.printf("Door Number is %03d-DN\n", i);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("-1");
+        }
+
+        scanner.close();
+    }
+}
+     
+          
+    
